@@ -20,7 +20,7 @@ jobs:
           cache: maven
 
       - name: run maven
-        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" --batch-mode --update-snapshots package
+        run: mvn -Drevision=${{ github.ref_name }} -Dchangelist="" --batch-mode --update-snapshots package
 
       - name: create release
         uses: actions/create-release@v1
@@ -36,7 +36,7 @@ jobs:
 
 
       - name: build for oxygen 23
-        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=23 --batch-mode --update-snapshots clean package
+        run: mvn -Drevision=${{ github.ref_name }} -Dchangelist="" -Doxygen.version=23 --batch-mode --update-snapshots clean package
 
       - name: upload oxygen plugin to release
         uses: actions/upload-release-asset@v1
@@ -50,7 +50,7 @@ jobs:
 
 
       - name: build for oxygen 24
-        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=24 --batch-mode --update-snapshots clean package
+        run: mvn -Drevision=${{ github.ref_name }} -Dchangelist="" -Doxygen.version=24 --batch-mode --update-snapshots clean package
 
       - name: upload oxygen plugin to release
         uses: actions/upload-release-asset@v1
@@ -64,7 +64,7 @@ jobs:
 
 
       - name: build for oxygen 25
-        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=25 --batch-mode --update-snapshots clean package
+        run: mvn -Drevision=${{ github.ref_name }} -Dchangelist="" -Doxygen.version=25 --batch-mode --update-snapshots clean package
 
       - name: upload oxygen plugin to release
         uses: actions/upload-release-asset@v1
@@ -78,7 +78,7 @@ jobs:
 
 
       - name: build for oxygen 26
-        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=26 --batch-mode --update-snapshots clean package
+        run: mvn -Drevision=${{ github.ref_name }} -Dchangelist="" -Doxygen.version=26 --batch-mode --update-snapshots clean package
 
       - name: upload oxygen plugin to release
         uses: actions/upload-release-asset@v1
@@ -92,7 +92,7 @@ jobs:
 
 
       - name: build for oxygen 27
-        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=27 --batch-mode --update-snapshots clean package
+        run: mvn -Drevision=${{ github.ref_name }} -Dchangelist="" -Doxygen.version=27 --batch-mode --update-snapshots clean package
 
       - name: upload oxygen plugin to release
         uses: actions/upload-release-asset@v1
