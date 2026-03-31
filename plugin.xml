@@ -7,7 +7,7 @@
     name="${project.name}"
     description="Implementation of the TEI XPointer scheme and XPath function extensions"
     version="${project.version}"
-    class="${project.groupId}.HTTPClientPlugin"
+    class="de.ulbms.scdh.oxygen.httpclient.HTTPClientPlugin"
     classLoaderType="preferReferencedResources">
 
    <runtime>
@@ -18,6 +18,6 @@
 
    <extension
        type="WorkspaceAccess"
-       class="${project.groupId}.HTTPClientPluginExtension"/>
+       class="de.ulbms.scdh.oxygen.httpclient.HTTPClientPluginExtension"/>
 
 </plugin>

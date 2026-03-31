@@ -66,11 +66,11 @@
       <version>${oxygen.sdk.version}</version>
     </dependency>
     <!-- EXPath HTTP client -->
-    <!-- <dependency> -->
-    <!--   <groupId>org.expath.http.client</groupId> -->
-    <!--   <artifactId>http-client-saxon</artifactId> -->
-    <!--   <version>${expath-http-client.version}</version> -->
-    <!-- </dependency> -->
+    <dependency>
+      <groupId>org.expath.http.client</groupId>
+      <artifactId>http-client-saxon</artifactId>
+      <version>${expath-http-client.version}</version>
+    </dependency>
     <dependency>
       <groupId>org.expath.http.client</groupId>
       <artifactId>http-client-java</artifactId>
@@ -123,6 +123,7 @@
       </plugin>
 
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.0.2</version>
         <executions>
@@ -180,13 +181,14 @@
               <outputDirectory>${project.build.directory}/lib</outputDirectory>
               <stripVersion>true</stripVersion>
               <!-- exclude artifacts not needed to be packed into plugin -->
-              <excludeArtifactIds>oxygen,Saxon-HE</excludeArtifactIds>
+              <excludeArtifactIds>http-client-saxon,oxygen,Saxon-HE</excludeArtifactIds>
             </configuration>
           </execution>
         </executions>
       </plugin>
 
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.4</version>
         <executions>
