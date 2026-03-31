@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.ulbms.scdh.oxygen</groupId>
+  <artifactId>http-client-oxyen-plugin</artifactId>
+  <version>${revision}${changelist}</version>
+
+  <packaging>pom</packaging>
+
+  <name>EXPath HTTP Client oXygen Plugin</name>
+  <description>oXygen plugin that provides the EXPath HTTP Client implementation</description>
+  <url>https://github.com/scdh/http-client-oxygen-plugin</url>
+
+  <organization>
+    <name>Service Center of Digital Humanities, ULB, University of Münster</name>
+    <url>https://www.uni-muenster.de/SCDH/</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Christian Lück</name>
+      <organization>SCDH, University of Münster</organization>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/scdh/http-client-oxygen-plugin.git</connection>
+    <developerConnection>scm:git:https://github.com/scdh/http-client-oxygen-plugin.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>scm:git:https://github.com/scdh/http-client-oxygen-plugin.git</url>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <slf4j.version>1.7.32</slf4j.version>
+    <spotless.version>3.4.0</spotless.version>
+    <palantir-java-format.version>2.90.0</palantir-java-format.version>
+
+    <!--
+	  http-client.verson and saxon.version and oxygen.version have
+	  to be coordinated, see profiles.
+      -->
+    <expath-http-client.version>1.4.2</expath-http-client.version>
+    <expath-pkg.version>1.6.1</expath-pkg.version>
+    <saxon.version>10.6</saxon.version>
+    <saxon4xspec.version>10.6</saxon4xspec.version>
+    <oxygen.versions>23:23.0,23.1,23.2|24:24.0,24.1,24.2|25:25.0,25.1|26:26.0,26.1|27:27.0+</oxygen.versions>
+    <oxygen.version>24</oxygen.version>
+    <oxygen.sdk.version>24.1.0.0</oxygen.sdk.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.oxygenxml</groupId>
+      <artifactId>oxygen</artifactId>
+      <version>${oxygen.sdk.version}</version>
+    </dependency>
+    <!-- EXPath HTTP client -->
+    <dependency>
+      <groupId>org.expath.http.client</groupId>
+      <artifactId>http-client-saxon</artifactId>
+      <version>${expath-http-client.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.expath.http.client</groupId>
+      <artifactId>http-client-java</artifactId>
+      <version>${expath-http-client.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.expath.packaging</groupId>
+      <artifactId>pkg-saxon</artifactId>
+      <version>${expath-pkg.version}</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>oxygen-repository</id>
+      <url>https://www.oxygenxml.com/maven/</url>
+    </repository>
+    <repository>
+      <id>github-scdh-x2tei-transformations</id>
+      <url>https://maven.pkg.github.com/SCDH/http-client-oxygen-plugin</url>
+    </repository>
+  </repositories>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>${spotless.version}</version>
+        <configuration>
+          <formats>
+            <!-- you can define as many formats as you want, each is independent -->
+            <format>
+              <!-- define the files to apply to -->
+              <includes>
+                <include>.gitattributes</include>
+                <include>.gitignore</include>
+              </includes>
+              <!-- define the steps to apply to those files -->
+              <trimTrailingWhitespace/>
+              <endWithNewline/>
+              <indent>
+                <tabs>true</tabs>
+                <spacesPerTab>4</spacesPerTab>
+              </indent>
+            </format>
+          </formats>
+          <java>
+            <palantirJavaFormat>
+              <version>${palantir-java-format.version}</version>
+              <style>PALANTIR</style>
+              <formatJavadoc>false</formatJavadoc>
+            </palantirJavaFormat>
+            <indent>
+              <tabs>true</tabs>
+              <spacesPerTab>4</spacesPerTab>
+            </indent>
+            <!-- <licenseHeader> -->
+            <!--     <content>/* (C)$YEAR */</content> -->
+            <!-- </licenseHeader> -->
+          </java>
+          <pom>
+            <includes>
+              <include>pom.xml</include>
+            </includes>
+            <sortPom/>
+            <!-- has its own section below -->
+          </pom>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <profiles>
+    <!--
+           Profiles for building for different versions of
+           oxygenxml. Please add new versions to the property
+           oxygen.versions, too!  See:
+           https://github.com/expath/expath-http-client-java/tree/http-client-1.4.2?tab=readme-ov-file#using-the-saxon-ri
+
+      -->
+    <profile>
+      <id>oxygen23</id>
+      <activation>
+        <property>
+          <name>oxygen.version</name>
+          <value>23</value>
+        </property>
+      </activation>
+      <properties>
+        <expath-http-client.version>1.3.0</expath-http-client.version>
+        <saxon.version>9.9.1-7</saxon.version>
+        <oxygen.sdk.version>23.1.0.4</oxygen.sdk.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>oxygen24</id>
+      <activation>
+        <property>
+          <name>oxygen.version</name>
+          <value>24</value>
+        </property>
+      </activation>
+      <properties>
+        <expath-http-client.version>1.4.2</expath-http-client.version>
+        <expath-pkg.version>1.6.1</expath-pkg.version>
+        <saxon.version>10.6</saxon.version>
+        <oxygen.sdk.version>24.1.0.0</oxygen.sdk.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>oxygen25</id>
+      <activation>
+        <property>
+          <name>oxygen.version</name>
+          <value>25</value>
+        </property>
+      </activation>
+      <properties>
+        <expath-http-client.version>1.4.2</expath-http-client.version>
+        <expath-pkg.version>1.6.1</expath-pkg.version>
+        <saxon.version>11.2</saxon.version>
+        <oxygen.sdk.version>25.1.0.2</oxygen.sdk.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>oxygen26</id>
+      <activation>
+        <property>
+          <name>oxygen.version</name>
+          <value>26</value>
+        </property>
+      </activation>
+      <properties>
+        <expath-http-client.version>1.5.2</expath-http-client.version>
+        <expath-pkg.version>2.1.1</expath-pkg.version>
+        <saxon.version>12.3</saxon.version>
+        <oxygen.sdk.version>26.0.0.2</oxygen.sdk.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>oxygen27</id>
+      <activation>
+        <property>
+          <name>oxygen.version</name>
+          <value>27</value>
+        </property>
+      </activation>
+      <properties>
+        <expath-http-client.version>1.5.2</expath-http-client.version>
+        <expath-pkg.version>2.1.1</expath-pkg.version>
+        <saxon.version>12.5</saxon.version>
+        <oxygen.sdk.version>26.1.0.2</oxygen.sdk.version>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>
