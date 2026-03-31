@@ -224,6 +224,49 @@
         </executions>
       </plugin>
 
+      <!-- make a package descriptor for multiple versions of oxygen -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>xml-maven-plugin</artifactId>
+        <version>1.0.2</version>
+        <configuration>
+          <transformationSets>
+            <transformationSet>
+              <dir>${project.build.directory}</dir>
+              <includes>
+                <include>descriptor.xml</include>
+              </includes>
+              <stylesheet>multiversion.xsl</stylesheet>
+              <parameters>
+                <parameter>
+                  <name>oxygen-versions</name>
+                  <value>${oxygen.versions}</value>
+                </parameter>
+                <parameter>
+                  <name>artifact</name>
+                  <value>${project.artifactId}</value>
+                </parameter>
+              </parameters>
+            </transformationSet>
+          </transformationSets>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>Saxon-HE</artifactId>
+            <version>10.2</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <goals>
+              <goal>transform</goal>
+            </goals>
+            <phase>package</phase>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
