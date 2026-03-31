@@ -19,8 +19,8 @@
 
   <licenses>
     <license>
-      <name>MIT License</name>
-      <url>https://opensource.org/licenses/mit-license.php</url>
+      <name>Mozilla Public License</name>
+      <url>https://opensource.org/license/MPL-1.0</url>
     </license>
   </licenses>
 
@@ -103,31 +103,53 @@
     <plugins>
 
       <plugin>
-            <artifactId>maven-resources-plugin</artifactId>
-            <version>3.0.2</version>
-            <executions>
-               <execution>
-                  <id>properties-to-resources</id>
-                  <phase>generate-resources</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <outputDirectory>${project.build.directory}</outputDirectory>
-                     <resources>
-                        <resource>
-                           <directory>${project.basedir}</directory>
-                           <includes>
-                              <include>plugin.xml</include>
-                              <include>descriptor.xml</include>
-                           </includes>
-                           <filtering>true</filtering>
-                        </resource>
-                     </resources>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <!-- let's have a license property! -->
+          <execution>
+            <id>read-license</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <target>
+                <loadfile property="license" srcFile="LICENSE"/>
+              </target>
+              <exportAntProperties>true</exportAntProperties>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <executions>
+          <execution>
+            <id>properties-to-resources</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>generate-resources</phase>
+            <configuration>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}</directory>
+                  <includes>
+                    <include>plugin.xml</include>
+                    <include>descriptor.xml</include>
+                  </includes>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
