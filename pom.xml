@@ -6,8 +6,6 @@
   <artifactId>http-client-oxygen</artifactId>
   <version>${revision}${changelist}</version>
 
-  <packaging>pom</packaging>
-
   <name>EXPath HTTP Client oXygen Plugin</name>
   <description>oXygen plugin that provides the EXPath HTTP Client implementation</description>
   <url>https://github.com/scdh/http-client-oxygen-plugin</url>
