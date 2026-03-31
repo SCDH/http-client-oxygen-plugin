@@ -3,7 +3,6 @@ package de.ulbms.scdh.oxygen.httpclient;
 import ro.sync.exml.plugin.workspace.WorkspaceAccessPluginExtension;
 import ro.sync.exml.workspace.api.standalone.StandalonePluginWorkspace;
 
-
 /**
  * See {@link https://www.oxygenxml.com/doc/versions/22.1/ug-editor/topics/oxygen-plugin.html}
  *
@@ -12,13 +11,11 @@ import ro.sync.exml.workspace.api.standalone.StandalonePluginWorkspace;
  */
 public class HTTPClientPluginExtension implements WorkspaceAccessPluginExtension {
 
-    @Override
-    public void applicationStarted(StandalonePluginWorkspace pluginWorkspace) {
-    }
+	@Override
+	public void applicationStarted(StandalonePluginWorkspace pluginWorkspace) {}
 
-    @Override
-    public boolean applicationClosing() {
-	return true;
-    }
-
+	@Override
+	public boolean applicationClosing() {
+		return true;
+	}
 }

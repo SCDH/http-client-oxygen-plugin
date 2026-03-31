@@ -10,12 +10,12 @@ import ro.sync.exml.plugin.PluginDescriptor;
  */
 public class HTTPClientPlugin extends Plugin {
 
-    /**
-     * Constructs the plugin.
-     *
-     * @@param descriptor The plugin descriptor
-     */
-    public HTTPClientPlugin(PluginDescriptor descriptor) {
-        super(descriptor);
-    }
+	/**
+	 * Constructs the plugin.
+	 *
+	 * @@param descriptor The plugin descriptor
+	 */
+	public HTTPClientPlugin(PluginDescriptor descriptor) {
+		super(descriptor);
+	}
 }
