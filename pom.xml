@@ -214,6 +214,7 @@
             </goals>
             <phase>package</phase>
             <configuration>
+              <finalName>${project.artifactId}${oxygen.version}-${project.version}</finalName>
               <archiveBaseDirectory>${project.basedir}</archiveBaseDirectory>
               <descriptors>
                 <descriptor>plugin-assembly.xml</descriptor>
