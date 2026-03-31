@@ -11,4 +11,4 @@ Install from this URL:
 https://scdh.github.io/http-client-oxygen-plugin/descriptor.xml
 ```
 
-Add this URL to the user dialogue in **Help** -> **Install new add-ons...*.
+Add this URL to the user dialogue in **Help** -> **Install new add-ons...**.
