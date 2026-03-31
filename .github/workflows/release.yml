@@ -1,0 +1,105 @@
+name: Create release
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+-?**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+          cache: maven
+
+      - name: run maven
+        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" --batch-mode --update-snapshots package
+
+      - name: create release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body_path: CHANGES.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: build for oxygen 23
+        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=23 --batch-mode --update-snapshots clean package
+
+      - name: upload oxygen plugin to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: target/http-client-oxygen23-${{ github.ref_name }}-plugin.jar
+          asset_name: http-client-oxygen23-${{ github.ref_name }}-plugin.jar
+          asset_content_type: application/java-archive
+
+
+      - name: build for oxygen 24
+        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=24 --batch-mode --update-snapshots clean package
+
+      - name: upload oxygen plugin to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: target/http-client-oxygen24-${{ github.ref_name }}-plugin.jar
+          asset_name: http-client-oxygen24-${{ github.ref_name }}-plugin.jar
+          asset_content_type: application/java-archive
+
+
+      - name: build for oxygen 25
+        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=25 --batch-mode --update-snapshots clean package
+
+      - name: upload oxygen plugin to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: target/http-client-oxygen25-${{ github.ref_name }}-plugin.jar
+          asset_name: http-client-oxygen25-${{ github.ref_name }}-plugin.jar
+          asset_content_type: application/java-archive
+
+
+      - name: build for oxygen 26
+        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=26 --batch-mode --update-snapshots clean package
+
+      - name: upload oxygen plugin to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: target/http-client-oxygen26-${{ github.ref_name }}-plugin.jar
+          asset_name: http-client-oxygen26-${{ github.ref_name }}-plugin.jar
+          asset_content_type: application/java-archive
+
+
+      - name: build for oxygen 27
+        run: mvn -Drevision=${{ github.ref }} -Dchangelist="" -Doxygen.version=27 --batch-mode --update-snapshots clean package
+
+      - name: upload oxygen plugin to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: target/http-client-oxygen27-${{ github.ref_name }}-plugin.jar
+          asset_name: http-client-oxygen27-${{ github.ref_name }}-plugin.jar
+          asset_content_type: application/java-archive
