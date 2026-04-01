@@ -1,5 +1,9 @@
 # Changes
 
+## 0.1.2
+
+-fixes links in descriptor, see #2
+
 ## 0.1.1
 
 - fixes release pipeline
