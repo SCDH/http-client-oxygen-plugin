@@ -54,7 +54,7 @@ you. Here's a version map, that is behind it.
 | oXygen | HTTP Client | Saxon | Transformation Scenarios | XSLTOperation |
 |:--|:--|:--|:--|:--|
 | 23 | 1.3.0 | 9.9.1-7 | ⬜ | ⬜ |
-| 24 | 1.4.2 | 10.6 | ⬜ | ❌ |
+| 24 | 1.4.2 | 10.6 | ⬜ | ❌[^1](issues/1) |
 | 25 | 1.4.2 | 11.2 | ⬜ | ⬜ |
 | 26+ | 1.5.2 | 12.3+ | ✅ | ✅ |
 
