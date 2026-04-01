@@ -15,6 +15,8 @@
 
    <xsl:param name="artifact" required="true"/>
 
+   <xsl:param name="release-url" as="xs:string" required="true"/>
+
    <xsl:template match="extension">
       <xsl:variable name="context" select="."/>
       <xsl:for-each select="tokenize($oxygen-versions, '\|')">
@@ -39,8 +41,10 @@
    </xsl:template>
 
    <xsl:template match="location/@href">
-      <xsl:param name="plugin-version" as="xs:string" tunnel="true"/>
-      <xsl:attribute name="href" select="replace(., concat($artifact, '[^-]*'), concat($artifact, $plugin-version))"/>
+     <xsl:param name="plugin-version" as="xs:string" tunnel="true"/>
+     <xsl:variable name="base-artifact" as="xs:string" select="substring(., string-length($release-url) + 1)"/>
+     <xsl:variable name="artifact" as="xs:string" select="replace($base-artifact, '-oxygen-', '-oxgen' || $plugin-version || '-')"/>
+     <xsl:attribute name="href" select="$release-url || $artifact"/>
    </xsl:template>
 
    <xsl:template match="oxy_version/text()">

@@ -38,6 +38,9 @@
 
   <properties>
     <release.url>https://github.com/SCDH/http-client-oxygen-plugin/releases/download/${project.version}/</release.url>
+    <!-- want    https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.1/http-client-oxygen23-0.1.1-plugin.jar -->
+    <!-- want    https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.2.0/http-client-oxygen24-0.2.0-plugin.jar -->    
+    <!-- #2 bad  https://github.com/SCDH/http-client-oxygen23-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen23-refs/tags/0.1.1-plugin.jar -->
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
@@ -247,6 +250,10 @@
                 <parameter>
                   <name>artifact</name>
                   <value>${project.artifactId}</value>
+                </parameter>
+                <parameter>
+                  <name>release-url</name>
+                  <value>${release.url}</value>
                 </parameter>
               </parameters>
             </transformationSet>
