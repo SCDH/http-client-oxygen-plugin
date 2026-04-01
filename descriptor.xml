@@ -3,8 +3,8 @@
                xmlns:xt="http://www.oxygenxml.com/ns/extension"
                xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen23.0">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen23-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen23-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>23.0</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -391,8 +391,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen23.1">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen23-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen23-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>23.1</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -779,8 +779,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen23.2">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen23-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen23-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>23.2</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -1167,8 +1167,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen24.0">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen24-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen24-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>24.0</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -1555,8 +1555,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen24.1">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen24-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen24-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>24.1</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -1943,8 +1943,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen24.2">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen24-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen24-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>24.2</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -2331,8 +2331,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen25.0">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen25-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen25-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>25.0</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -2719,8 +2719,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen25.1">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen25-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen25-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>25.1</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -3107,8 +3107,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen26.0">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen26-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen26-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>26.0</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -3495,8 +3495,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen26.1">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen26-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen26-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>26.1</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
@@ -3883,8 +3883,8 @@ EXHIBIT A.
 </xt:license>
    </xt:extension>
    <xt:extension id="de.ulbms.scdh.oxygen.http-client-oxygen27.0+">
-      <xt:location href="https://github.com/SCDH/http-client-oxygen27-plugin/releases/download/refs/tags/0.1.1/http-client-oxygen27-refs/tags/0.1.1-plugin.jar"/>
-      <xt:version>refs/tags/0.1.1</xt:version>
+      <xt:location href="https://github.com/SCDH/http-client-oxygen-plugin/releases/download/0.1.2/http-client-oxygen24-0.1.2-plugin.jar"/>
+      <xt:version>0.1.2</xt:version>
       <xt:oxy_version>27.0+</xt:oxy_version>
       <xt:type>plugin</xt:type>
       <xt:author>Christian Lück</xt:author>
