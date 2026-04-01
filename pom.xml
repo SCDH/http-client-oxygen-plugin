@@ -186,7 +186,7 @@
               <outputDirectory>${project.build.directory}/lib</outputDirectory>
               <stripVersion>true</stripVersion>
               <!-- exclude artifacts not needed to be packed into plugin -->
-              <excludeArtifactIds>http-client-saxon,oxygen,Saxon-HE</excludeArtifactIds>
+              <excludeArtifactIds>http-client-saxon,oxygen</excludeArtifactIds>
             </configuration>
           </execution>
         </executions>
