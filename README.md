@@ -56,7 +56,7 @@ you. Here's a version map, that is behind it.
 | 23 | 1.3.0 | 9.9.1-7 | ⬜ | ⬜ |
 | 24 | 1.4.2 | 10.6 | ⬜ | ❌ |
 | 25 | 1.4.2 | 11.2 | ⬜ | ⬜ |
-| 26 | 1.5.2 | 12.3 | ✅ | ✅ |
+| 26+ | 1.5.2 | 12.3+ | ✅ | ✅ |
 
 Why are there white squares? These combinations are
 untested. Contributions of experience is welcome!
